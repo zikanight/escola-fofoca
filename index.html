@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escola Fofoca</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin: 10px 0;
+            width: 300px;
+            border: none;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: white;
+            color: black;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .response {
+            margin-top: 20px;
+            max-width: 600px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Escola Fofoca</h1>
+    <form id="questionForm">
+        <input type="text" id="question" name="question" placeholder="Faça sua pergunta...">
+        <input type="submit" value="Enviar">
+    </form>
+    <div id="response" class="response"></div>
+
+    <script>
+        document.getElementById('questionForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const question = document.getElementById('question').value;
+            const responseDiv = document.getElementById('response');
+
+            if (question.trim() === "") {
+                responseDiv.innerHTML = "Por favor, faça uma pergunta.";
+                return;
+            }
+
+            // Aqui você pode adicionar lógica para processar a pergunta.
+            // Para simplicidade, vou apenas responder com uma mensagem genérica.
+            const response = "Essa é uma boa pergunta! Ainda estou aprendendo, então vamos aprender juntos!";
+
+            responseDiv.innerHTML = response;
+        });
+    </script>
+</body>
+</html>
